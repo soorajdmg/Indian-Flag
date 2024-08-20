@@ -151,6 +151,214 @@ def draw_cloud():
     t.dot(40)
 
 
+def draw_laddoo(x, y):
+    t.color("#F7D13D")
+    t.penup()
+    t.goto(x, y)
+    t.pendown()
+    t.dot(10)
+
+
+def draw_table():
+    t.width(1)
+    t.penup()
+    t.goto(103, -150)
+    t.pendown()
+    t.color("#564130")
+    t.begin_fill()
+    t.setheading(0)
+    for _ in range(2):
+        t.forward(5)
+        t.right(90)
+        t.forward(20)
+        t.right(90)
+    t.end_fill()
+
+    t.penup()
+    t.goto(142, -150)
+    t.pendown()
+    t.color("#564130")
+    t.begin_fill()
+    t.setheading(0)
+    for _ in range(2):
+        t.forward(5)
+        t.right(90)
+        t.forward(20)
+        t.right(90)
+    t.end_fill()
+
+    t.penup()
+    t.goto(100, -150)
+    t.pendown()
+    t.color("#453427")
+    t.begin_fill()
+    t.setheading(0)
+    for _ in range(2):
+        t.forward(50)
+        t.right(90)
+        t.forward(5)
+        t.right(90)
+    t.end_fill()
+
+    draw_laddoo(115, -146)
+    draw_laddoo(125, -146)
+    draw_laddoo(135, -146)
+    draw_laddoo(120, -139)
+    draw_laddoo(130, -139)
+    draw_laddoo(125, -132)
+
+
+def draw_curve(start, radius, angle):
+    t.setheading(start)
+    t.circle(radius, angle)
+
+
+def draw_rectangle2(width, height, color):
+    t.color("black")
+    t.fillcolor(color)
+    t.begin_fill()
+    for _ in range(2):
+        t.forward(width)
+        t.left(90)
+        t.forward(height)
+        t.left(90)
+    t.end_fill()
+
+
+def draw_circle(radius, color):
+    t.color("black")
+    t.fillcolor(color)
+    t.begin_fill()
+    t.circle(radius)
+    t.end_fill()
+
+
+def draw_oval(radius_x, radius_y, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    for _ in range(2):
+        t.circle(radius_x, 90)  # Draw one half of the oval
+        t.circle(radius_y, 90)  # Draw the other half
+    t.end_fill()
+
+
+def draw_head():
+    t.penup()
+    t.goto(-180, -185)
+    t.pendown()
+    draw_circle(25, "peachpuff")
+
+    # eyes
+    t.penup()
+    t.goto(-190, -160)
+    t.pendown()
+    draw_circle(3, "black")
+    t.penup()
+    t.goto(-170, -160)
+    t.pendown()
+    draw_circle(3, "black")
+
+    # mouth
+    t.penup()
+    t.goto(-180, -165)
+    t.pendown()
+    t.color("red")
+    t.dot(15)
+    t.penup()
+    t.goto(-180, -162)
+    t.pendown()
+    t.color("peachpuff")
+    t.dot(15)
+
+
+def draw_body():
+    t.penup()
+    t.goto(-200, -235)
+    t.pendown()
+    draw_rectangle2(40, 50, "white")
+
+
+def draw_legs():
+    # Left leg
+    t.penup()
+    t.goto(-200, -260)
+    t.pendown()
+    draw_rectangle2(10, 25, "#0e98ba")
+
+    # Right leg
+    t.penup()
+    t.goto(-170, -260)
+    t.pendown()
+    draw_rectangle2(10, 25, "#0e98ba")
+
+
+def draw_arms():
+    # Left arm
+    t.penup()
+    t.goto(-210, -210)
+    t.pendown()
+    draw_rectangle2(10, 25, "white")
+
+    # Right arm
+    t.penup()
+    t.goto(-160, -210)
+    t.pendown()
+    draw_rectangle2(10, 25, "white")
+
+
+def draw_hair():
+    t.penup()
+    t.goto(-30, 100)
+    t.pendown()
+    draw_rectangle2(60, 10, "black")
+
+
+def draw_shoes():
+    t.penup()
+    t.goto(-210, -260)
+    t.pendown()
+    draw_rectangle2(20, 8, "#564130")
+
+    t.penup()
+    t.goto(-170, -260)
+    t.pendown()
+    draw_rectangle2(20, 8, "#564130")
+
+
+def draw_balloon():
+    #green
+    t.penup()
+    t.goto(-210, -200)
+    t.pendown()
+    draw_curve(120, -100, 90)
+    t.setheading(30)
+    draw_oval(35, 20, "#138808")
+    #white
+    t.penup()
+    t.goto(-210, -200)
+    t.pendown()
+    draw_curve(140, -100, 90)
+    t.setheading(30)
+    draw_oval(35, 20, "white")
+    #saffron
+    t.penup()
+    t.goto(-205, -210)
+    t.pendown()
+    draw_curve(160, -100, 90)
+    t.setheading(40)
+    draw_oval(35, 20, "#FF9933")
+
+
+def draw_boy():
+    draw_head()
+    draw_body()
+    draw_legs()
+    draw_arms()
+    # draw_hair()
+    draw_shoes()
+    draw_balloon()
+
+
 # Drawing the grass
 t.penup()
 t.goto(-400, -100)
@@ -252,6 +460,8 @@ t.end_fill()
 
 draw_flag()
 draw_cloud()
+draw_table()
+draw_boy()
 
 t.hideturtle()
 t.done()
