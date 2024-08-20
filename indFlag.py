@@ -1,6 +1,5 @@
 import turtle as t
 
-# Setting up the environment
 t.speed(0)
 t.bgcolor("skyblue")
 t.title("Indian Flag: Himalayan Majesty")
@@ -9,8 +8,7 @@ flag_width = 150
 flag_height = 80
 stripe_height = flag_height / 3
 
-
-def draw_rectangle(color, width, height):
+def rectangle(color, width, height):
     t.color(color)
     t.begin_fill()
     for _ in range(2):
@@ -20,14 +18,13 @@ def draw_rectangle(color, width, height):
         t.right(90)
     t.end_fill()
 
-
-def draw_chakra(radius):
+def chakra(radius):
     t.penup()
     t.goto(-10, -radius+10)
     t.pendown()
     t.color("blue")
     t.circle(radius)
-    # Draw 24 spokes
+    #spokes
     for _ in range(24):
         t.penup()
         t.goto(0, 0)
@@ -36,35 +33,33 @@ def draw_chakra(radius):
         t.forward(radius)
 
 
-def draw_flag():
-    # Center the white stripe on the screen
+def flag():
     start_y = stripe_height / 2
-
-    # Draw the white stripe (centered)
+    #white
     t.penup()
     t.goto(75, start_y)
     t.pendown()
-    draw_rectangle("white", flag_width, stripe_height)
+    rectangle("white", flag_width, stripe_height)
 
-    # Draw the saffron stripe above the white stripe
+    #saffron
     t.penup()
     t.goto(75, start_y + stripe_height)
     t.pendown()
-    draw_rectangle("#FF9933", flag_width, stripe_height)
+    rectangle("#FF9933", flag_width, stripe_height)
 
-    # Draw the green stripe below the white stripe
+    #green
     t.penup()
     t.goto(75, start_y - stripe_height)
     t.pendown()
-    draw_rectangle("#138808", flag_width, stripe_height)
+    rectangle("#138808", flag_width, stripe_height)
 
-    # Draw the Ashoka Chakra in the center of the white stripe
+    #ashokChakra
     t.penup()
     t.goto(0, start_y - stripe_height / 2)
     t.pendown()
-    draw_chakra(10)  # Chakra size remains the same
+    chakra(10)  # Chakra size remains the same
 
-    # Draw the flagpole
+    #flagPole
     t.penup()
     t.goto(-flag_width / 2 - 6, start_y + stripe_height - 2)
     t.pendown()
@@ -81,7 +76,7 @@ def draw_flag():
     t.setheading(270)
     t.forward(flag_height + 120)
 
-    # Add a decorative base for the flagpole
+    #base
     t.width(1)
     t.penup()
     t.goto(-flag_width / 2 - 12, start_y - flag_height - 90)
@@ -112,7 +107,7 @@ def draw_flag():
     t.end_fill()
 
 
-def draw_cloud():
+def cloud():
     t.color("white")
 
     t.penup()
@@ -151,7 +146,7 @@ def draw_cloud():
     t.dot(40)
 
 
-def draw_laddoo(x, y):
+def laddoo(x, y):
     t.color("#F7D13D")
     t.penup()
     t.goto(x, y)
@@ -159,7 +154,7 @@ def draw_laddoo(x, y):
     t.dot(10)
 
 
-def draw_table():
+def table():
     t.width(1)
     t.penup()
     t.goto(103, -150)
@@ -200,20 +195,20 @@ def draw_table():
         t.right(90)
     t.end_fill()
 
-    draw_laddoo(115, -146)
-    draw_laddoo(125, -146)
-    draw_laddoo(135, -146)
-    draw_laddoo(120, -139)
-    draw_laddoo(130, -139)
-    draw_laddoo(125, -132)
+    laddoo(115, -146)
+    laddoo(125, -146)
+    laddoo(135, -146)
+    laddoo(120, -139)
+    laddoo(130, -139)
+    laddoo(125, -132)
 
 
-def draw_curve(start, radius, angle):
+def curve(start, radius, angle):
     t.setheading(start)
     t.circle(radius, angle)
 
 
-def draw_rectangle2(width, height, color):
+def rect2(width, height, color):
     t.color("black")
     t.fillcolor(color)
     t.begin_fill()
@@ -225,7 +220,7 @@ def draw_rectangle2(width, height, color):
     t.end_fill()
 
 
-def draw_circle(radius, color):
+def circle(radius, color):
     t.color("black")
     t.fillcolor(color)
     t.begin_fill()
@@ -233,32 +228,33 @@ def draw_circle(radius, color):
     t.end_fill()
 
 
-def draw_oval(radius_x, radius_y, color):
+def oval(radius_x, radius_y, color):
     t.fillcolor(color)
     t.begin_fill()
     for _ in range(2):
-        t.circle(radius_x, 90)  # Draw one half of the oval
-        t.circle(radius_y, 90)  # Draw the other half
+        t.circle(radius_x, 90)
+        t.circle(radius_y, 90)
     t.end_fill()
 
 
-def draw_head():
+def head():
+    #head
     t.penup()
     t.goto(-180, -185)
     t.pendown()
-    draw_circle(25, "peachpuff")
+    circle(25, "peachpuff")
 
-    # eyes
+    #eyes
     t.penup()
     t.goto(-190, -160)
     t.pendown()
-    draw_circle(3, "black")
+    circle(3, "black")
     t.penup()
     t.goto(-170, -160)
     t.pendown()
-    draw_circle(3, "black")
+    circle(3, "black")
 
-    # mouth
+    #mouth
     t.penup()
     t.goto(-180, -165)
     t.pendown()
@@ -271,95 +267,96 @@ def draw_head():
     t.dot(15)
 
 
-def draw_body():
+def body():
     t.penup()
     t.goto(-200, -235)
     t.pendown()
-    draw_rectangle2(40, 50, "white")
+    rect2(40, 50, "white")
 
 
-def draw_legs():
-    # Left leg
+def legs():
+    #left
     t.penup()
     t.goto(-200, -260)
     t.pendown()
-    draw_rectangle2(10, 25, "#0e98ba")
+    rect2(10, 25, "#0e98ba")
 
-    # Right leg
+    #right
     t.penup()
     t.goto(-170, -260)
     t.pendown()
-    draw_rectangle2(10, 25, "#0e98ba")
+    rect2(10, 25, "#0e98ba")
 
 
-def draw_arms():
-    # Left arm
+def arms():
+    #left
     t.penup()
     t.goto(-210, -210)
     t.pendown()
-    draw_rectangle2(10, 25, "white")
+    rect2(10, 25, "white")
 
-    # Right arm
+    #right
     t.penup()
     t.goto(-160, -210)
     t.pendown()
-    draw_rectangle2(10, 25, "white")
+    rect2(10, 25, "white")
 
 
-def draw_hair():
+def hair():
     t.penup()
     t.goto(-30, 100)
     t.pendown()
-    draw_rectangle2(60, 10, "black")
+    rect2(60, 10, "black")
 
 
-def draw_shoes():
+def shoes():
+    #left
     t.penup()
     t.goto(-210, -260)
     t.pendown()
-    draw_rectangle2(20, 8, "#564130")
+    rect2(20, 8, "#564130")
 
+    #right
     t.penup()
     t.goto(-170, -260)
     t.pendown()
-    draw_rectangle2(20, 8, "#564130")
+    rect2(20, 8, "#564130")
 
 
-def draw_balloon():
-    #green
+def balloon():
+    # green
     t.penup()
     t.goto(-210, -200)
     t.pendown()
-    draw_curve(120, -100, 90)
+    curve(120, -100, 90)
     t.setheading(30)
-    draw_oval(35, 20, "#138808")
-    #white
+    oval(35, 20, "#138808")
+    # white
     t.penup()
     t.goto(-210, -200)
     t.pendown()
-    draw_curve(140, -100, 90)
+    curve(140, -100, 90)
     t.setheading(30)
-    draw_oval(35, 20, "white")
-    #saffron
+    oval(35, 20, "white")
+    # saffron
     t.penup()
     t.goto(-205, -210)
     t.pendown()
-    draw_curve(160, -100, 90)
+    curve(160, -100, 90)
     t.setheading(40)
-    draw_oval(35, 20, "#FF9933")
+    oval(35, 20, "#FF9933")
 
 
-def draw_boy():
-    draw_head()
-    draw_body()
-    draw_legs()
-    draw_arms()
-    # draw_hair()
-    draw_shoes()
-    draw_balloon()
+def boy():
+    head()
+    body()
+    legs()
+    arms()
+    shoes()
+    balloon()
 
 
-# Drawing the grass
+#grass
 t.penup()
 t.goto(-400, -100)
 t.pendown()
@@ -372,7 +369,7 @@ for i in range(2):
     t.right(90)
 t.end_fill()
 
-# Drawing mountains
+#mountains
 t.penup()
 t.goto(-400, -100)
 t.pendown()
@@ -402,7 +399,7 @@ for i in range(3):
     t.left(120)
 t.end_fill()
 
-# Drawing the clouds
+#clouds
 t.penup()
 t.goto(-35, 120)
 t.pendown()
@@ -449,7 +446,7 @@ t.end_fill()
 
 t.left(50)
 
-# Drawing the sun
+#sun
 t.penup()
 t.goto(-500, 350)
 t.pendown()
@@ -458,10 +455,17 @@ t.begin_fill()
 t.circle(125)
 t.end_fill()
 
-draw_flag()
-draw_cloud()
-draw_table()
-draw_boy()
+flag()
+cloud()
+table()
+boy()
+
+t.penup()
+t.pencolor("white")
+t.goto(40, -265)
+t.write("Indian Flag: Himalayan Majesty", font=("Verdana", 15, "normal"))
+t.goto(10, -300)
+t.write("Happy Independence Day", font=("Verdana", 20, "normal"))
 
 t.hideturtle()
 t.done()
