@@ -1,7 +1,8 @@
 # 🇮🇳 Indian Flag: Himalayan Majesty
 
  
-![IndianFlagSS](https://github.com/user-attachments/assets/151f6a2e-6ae1-4c26-b9d9-24c51d0a767c)
+![IndianFlagSS](https://github.com/user-attachments/assets/adaea6a8-4b10-46ae-acd2-9f7040175488)
+
 
 
 
