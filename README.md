@@ -59,9 +59,9 @@ To view this project on your local machine, follow these steps:
 
 The script leverages Python's Turtle graphics to draw each element, including the flag, mountains, and additional decorations like clouds and a boy holding balloons.
 
- - Flag Function: Draws the Indian flag with the correct color proportions and positions the Ashoka Chakra at the center.
- - Backdrop: Mountains and clouds are drawn to create the background scene.
- - Decorations: Additional elements like the boy, table, and balloons add to the festive atmosphere.
+ - **Flag Function:** Draws the Indian flag with the correct color proportions and positions the Ashoka Chakra at the center.
+ - **Backdrop:** Mountains and clouds are drawn to create the background scene.
+ - **Decorations:** Additional elements like the boy, table, and balloons add to the festive atmosphere.
 
 ## 🤝 Contributing
 
